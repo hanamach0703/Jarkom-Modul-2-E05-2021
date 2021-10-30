@@ -88,7 +88,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 ### Luffy ingin menghubungi Franky yang berada di EniesLobby dengan denden mushi. Kalian diminta Luffy untuk membuat website utama dengan mengakses franky.yyy.com dengan alias www.franky.yyy.com pada folder kaizoku.
 
 ## Jawaban
-### Pada node EneisLobby
+### EneisLobby
 - Menulis command untuk update package lists
   ```
   apt-get update
@@ -122,7 +122,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   service bind9 restart
   ```
     
-### Pada node Loguetown
+### Loguetown
 - Edit file 
   ```
   vim /etc/resolv.conf
@@ -137,7 +137,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 ### Setelah itu buat subdomain super.franky.yyy.com dengan alias www.super.franky.yyy.com yang diatur DNS nya di EniesLobby dan mengarah ke Skypie.
 
 ## Jawaban
-### Pada EniesLobby
+### EniesLobby
 - Edit file 
   ```
   vim /etc/bind/kaizoku/franky.E05.com
@@ -148,7 +148,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   ```
   service bind9 restart
   ```
-### Pada node Loguetown
+### Loguetown
 - Edit file 
   ```
   vim /etc/resolv.conf
@@ -162,7 +162,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 ### Buat juga reverse domain untuk domain utama.
 
 ## Jawaban
-### Pada EniesLobby
+### EniesLobby
 - Edit file 
   ```
   /etc/bind/named.conf.local 
@@ -177,7 +177,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   ```
   service bind9 restart
   ```
-### Pada Loguetown
+### Loguetown
 - Melakukan testing konfigurasi dengan perintah host -t PTR 192.202.2.2.
   ![image](https://user-images.githubusercontent.com/66562311/139525236-a8035a3b-1aad-48bc-963e-a7fa7af2f6bb.png)
 
@@ -186,7 +186,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 ### Supaya tetap bisa menghubungi Franky jika server EniesLobby rusak, maka buat Water7 sebagai DNS Slave untuk domain utama.
 
 ## Jawaban
-### Pada EniesLobby
+### EniesLobby
 - Edit file 
   ```
   /etc/bind/named.conf.local
@@ -196,7 +196,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   service bind9 restart
   ```
   
-### Pada water7 
+### water7 
 - Menulis command untuk update package lists
   ```
   apt-get update
@@ -216,7 +216,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   service bind9 restart
   ```
   
-### Pada Loguetown
+### Loguetown
 - Edit file 
   ```
   vim /etc/resolv.conf
@@ -232,7 +232,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 ### Setelah itu terdapat subdomain mecha.franky.yyy.com dengan alias www.mecha.franky.yyy.com yang didelegasikan dari EniesLobby ke Water7 dengan IP menuju ke Skypie dalam folder sunnygo.
 
 ## Jawaban
-### Pada EniesLobby
+### EniesLobby
 - Edit file 
   ```
   /etc/bind/kaizoku/franky.E05.com 
@@ -252,7 +252,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   service bind9 restart
   ```
 
-### Pada Water7
+### Water7
 - Edit file 
   ```
   /etc/bind/named.conf.options 
@@ -281,7 +281,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   service bind9 restart
   ```
   
-### Pada Loguetown
+### Loguetown
 - Melakukan testing `ping -c 4 mecha.franky.E05.com` dan `ping -c 4 www.mecha.franky.E05.com`
   ![image](https://user-images.githubusercontent.com/66562311/139526901-3f72eaa5-29a9-4fe2-a861-833bcff70bea.png)
 
@@ -290,7 +290,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 ### Untuk memperlancar komunikasi Luffy dan rekannya, dibuatkan subdomain melalui Water7 dengan nama general.mecha.franky.yyy.com dengan alias www.general.mecha.franky.yyy.com yang mengarah ke Skypie.
 
 ## Jawaban
-### Pada Water7
+### Water7
 - Edit file 
   ```
   /etc/bind/sunnygo/mecha.franky.E05.com
@@ -301,7 +301,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   service bind9 restart
   ```
   
-### Pada Loguetown
+### Loguetown
 - Melakukan testing `ping -c 4 general.mecha.franky.E05.com` dan `ping -c 4 www.general.mecha.franky.E05.com`
   ![image](https://user-images.githubusercontent.com/66562311/139527100-2f8e5617-cc66-498a-a4a5-cf0033399043.png)
 
@@ -314,7 +314,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 - Edit File
   ![image](https://user-images.githubusercontent.com/66562311/139527503-bbddfde5-6586-40b0-87f2-9c62a9d22acf.png)	
 
-### Pada Skypie
+### Skypie
 - Install aplikasi apache, PHP, dan libapache2-mod-php7.0.
   ```
   apt-get install apache2 -y
@@ -353,7 +353,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   ```
 - Rename folder franky menjadi franky.E05.com dan terdapat isi file seperti pada gambar berikut:
 
-### Pada Loguetown
+### Loguetown
 - Install aplikasi lynx.
   ```
   apt-get install lynx -y
@@ -371,35 +371,198 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 ### Setelah itu, pada subdomain www.super.franky.yyy.com, Luffy membutuhkan penyimpanan aset yang memiliki DocumentRoot pada /var/www/super.franky.yyy.com.
 
 ## Jawaban
+### Skypie
+- Pindah ke directory `/etc/apache2/sites-available`.
+- Copy file `000-default.conf` menjadi file `super.franky.E07.com.conf`.
+- Edit file 
+  ```
+  super.franky.B09.com.conf
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139532234-ca62e369-34e5-4887-a61c-b03768142e67.png)
 
+- Aktifkan konfigurasi.
+  ```
+  a2ensite super.franky.E05.com
+  ```
+- Restart apache.
+  ```
+  service apache2 restart
+  ```
+- Pindah ke directory `/var/www`
+- Download file zip.
+  ```
+  wget https://github.com/FeinardSlim/Praktikum-Modul-2-Jarkom/raw/main/super.franky.zip
+  ```
+- Melakukan unzip.
+  ```
+  unzip super.franky.zip
+  ```
+- Rename folder `super.franky` menjadi `super.franky.E05.com` dan terdapat isi file seperti pada gambar berikut:
+  ![image](https://user-images.githubusercontent.com/66562311/139532265-c8b12743-49c8-4a84-98c1-5d134fa03477.png)
+  
 ## No. 11
 ### Akan tetapi, pada folder /public, Luffy ingin hanya dapat melakukan directory listing saja.
 
 ## Jawaban
+### Pada Skypie
+- Pindah ke directory `/etc/apache2/sites-available`.
+- Edit file 
+  ```
+  super.franky.E05.com.conf 
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139532421-6c849075-59a3-4897-921d-b3278e8a3d20.png)
+- Restart apache.
+  ```
+  service apache2 restart
+  ```
+  
+### Loguetown
+- Membuka `www.super.franky.E05.com/public` menggunakan `lynx`.
+![image](https://user-images.githubusercontent.com/66562311/139532439-fe77e402-9401-4d3f-a46b-532ffbcc5f44.png)
+
 
 ## No. 12
 ### Tidak hanya itu, Luffy juga menyiapkan error file 404.html pada folder /error untuk mengganti error kode pada apache.
 
 ## Jawaban
+### Skypie
+- Pindah ke directory `/etc/apache2/sites-available`.
+- Edit file 
+  ```
+  super.franky.B09.com.conf
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139532561-1c1410fa-1ba9-4c89-af38-ee6ea5a604c2.png)
+- Restart apache.
+  ```
+  service apache2 restart
+  ```
+
+### Pada Loguetown
+- Buka `www.super.franky.E05.com/public` menggunakan lynx.
+![image](https://user-images.githubusercontent.com/66562311/139532639-f72b853f-8946-434a-b8f8-246e3c939993.png)
+https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%2012%20pt%205.mkv?raw=true
 
 ## No. 13
 ### Luffy juga meminta Nami untuk dibuatkan konfigurasi virtual host. Virtual host ini bertujuan untuk dapat mengakses file asset www.super.franky.yyy.com/public/js menjadi www.super.franky.yyy.com/js. 
 
 ## Jawaban
+### Skypie
+- Pindah ke directory /etc/apache2/sites-available.
+- Edit file 
+  ```
+  super.franky.E05.com.conf
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139532743-b5611c95-2034-4304-b1d1-173730c6f26e.png)
+  ![image](https://user-images.githubusercontent.com/66562311/139532755-0a6fb851-523c-4d17-8d5e-66802c326666.png)
+
+- Restart apache.
+  ```
+  service apache2 restart
+  ```
+
+### Pada Loguetown
+- Buka `www.super.franky.E05.com/js` menggunakan lynx.
+![image](https://user-images.githubusercontent.com/66562311/139532767-07fd7cf2-3fbd-4182-8cdb-ef5aac16ec08.png)
+
 
 ## No. 14
 ### Dan Luffy meminta untuk web www.general.mecha.franky.yyy.com hanya bisa diakses dengan port 15000 dan port 15500.
 
 ## Jawaban
+### Skypie
+- Pindah ke directory `/etc/apache2/sites-available`.
+- Copy file `000-default.conf` menjadi file `general.mecha.franky.E05.com.conf`.
+- Edit file 
+  ```
+  general.mecha.franky.B09.com.conf
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139532970-bea7daf6-cd6c-4000-bb04-4e98c62690e2.png)
+
+- Edit file, untuk meaktifkan port 15000 dan port 15500
+  ```
+  /etc/apache2/ports.conf
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139532988-91ff58c5-fde4-42dc-8558-b8b4bb9dacfa.png)
+
+- Aktifkan konfigurasi
+  ```
+  a2ensite general.mecha.franky.B09.com
+  ```
+- Restart apache.
+  ```
+  service apache2 restart
+  ```
+- Pindah ke directory `/var/www`.
+- Download file zip menggunakan `wget`.
+  ```
+  wget https://github.com/FeinardSlim/Praktikum-Modul-2-Jarkom/raw/main/general.mecha.franky.zip
+  ```
+- Lakukan unzip.
+  ```
+  unzip general.mecha.franky.zip
+  ```
+- Rename folder g`eneral.mecha.franky` menjadi `general.mecha.franky.E05.com`
+
+### Pada Loguetown
+- Buka `www.general.mecha.franky.E05.com` menggunakan `lynx`.
+  ![image](https://user-images.githubusercontent.com/66562311/139532998-8dfacd8c-be85-4ad7-9608-e19a6ca3394f.png)
+
+- Buka `www.general.mecha.franky.E05.com:15000` menggunakan `lynx`.
+  ![image](https://user-images.githubusercontent.com/66562311/139533014-03301dd9-d916-4b71-a094-b889759fb86d.png)
+
+- Buka `www.general.mecha.franky.E05.com:15500` menggunakan `lynx`.
+ ![image](https://user-images.githubusercontent.com/66562311/139533041-76b8d6df-9b8c-47aa-9c29-45197a564be6.png)
+
 
 ## No. 15
 ### dengan autentikasi username luffy dan password onepiece dan file di /var/www/general.mecha.franky.yyy.
 
 ## Jawaban
+### Skypie
+- Pindah ke directory `/etc/apache2/sites-available`.
+- Edit file 
+  ```
+  general.mecha.franky.E05.com.conf
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139533308-257a3675-10cc-4969-ab26-f50de8a0b06e.png)
+
+- Jalankan perintah berikut untuk membuat akun autentikasi baru dengan username luffy. Kita akan diminta untuk memasukkan password baru dan confirm password tersebut diisi onepiece.
+  ```
+  htpasswd -c /etc/apache2/.htpasswd luffy
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139533345-daeb46ce-f3d1-4d2b-8975-050f215acbc3.png)
+
+- Restart apache.
+  ```
+  service apache2 restart
+  ```
+  
+### Pada Loguetown
+- Buka `www.general.mecha.franky.B09.com:15000` menggunakan `lynx`.
+  https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%2015%20pt%203.mkv?raw=true
 
 ## No. 16
 ### Dan setiap kali mengakses IP Skypie akan dialihkan secara otomatis ke www.franky.yyy.com.
 
+## Jawaban
+### Skypie
+- Pindah ke directory `/etc/apache2/sites-available`.
+- Edit file
+  ```
+  000-default.conf
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139533449-983c9ec8-c6bb-4df5-82a6-28ad9e1af6a9.png)
+
+- Restart apache.
+  ```
+  service apache2 restart
+  ```
+
+### Pada Loguetown
+- Buka 192.181.2.4 menggunakan lynx.
+https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%2016%20pt%204.mkv?raw=true
 
 ## No. 17
 ### Dikarenakan Franky juga ingin mengajak temannya untuk dapat menghubunginya melalui website www.super.franky.yyy.com, dan dikarenakan pengunjung web server pasti akan bingung dengan randomnya images yang ada, maka Franky juga meminta untuk mengganti request gambar yang memiliki substring “franky” akan diarahkan menuju franky.png. Maka bantulah Luffy untuk membuat konfigurasi dns dan web server ini!
+
+## Jawaban
