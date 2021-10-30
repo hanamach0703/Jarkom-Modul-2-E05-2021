@@ -564,7 +564,7 @@ Pada Loguetown
   
 ### Pada Loguetown
 - Buka `www.general.mecha.franky.E05.com:15000` menggunakan `lynx`.
-  https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%2015%20pt%203.mkv?raw=true
+  <a href="https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%2015%20pt%203.mkv?raw=true">Hasil No. 15</a>
 
 ## No. 16
 ### Dan setiap kali mengakses IP Skypie akan dialihkan secara otomatis ke www.franky.yyy.com.
