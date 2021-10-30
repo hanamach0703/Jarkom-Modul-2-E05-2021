@@ -103,11 +103,11 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139523792-e25a6105-cc1f-4bce-92eb-3c3133ecf1ab.png)
 
-- Buat folder kaizoku dengan 
+- Membuat folder kaizoku dengan 
   ```
   mkdir /etc/bind/kaizoku
   ```
-- Copy kan db.local ke dalam folder kaizoku dan ubah nama nya menjadi `franky.E05.com`
+- Copy db.local ke dalam folder kaizoku dan ubah nama nya menjadi `franky.E05.com`
   ```
   cp /etc/bind/db.local /etc/bind/kaizoku/franky.E05.com
   ```
@@ -117,7 +117,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139523870-41e12988-5f22-4cfd-9382-817ca103f05a.png)
 
-- Restart bind9 dengan 
+- Restart bind9 dengan
   ```
   service bind9 restart
   ```
@@ -165,20 +165,20 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 ### EniesLobby
 - Edit file 
   ```
-  /etc/bind/named.conf.local 
+  vim /etc/bind/named.conf.local 
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139525287-e6d48aa7-c6d6-477b-bd97-dd2e6e9844c7.png)
   
 - Edit file 
   ```
-  /etc/bind/kaizoku/2.202.192.in-addr.arpa 
+  vim /etc/bind/kaizoku/2.202.192.in-addr.arpa 
   ```
 - Restart bind9 dengan 
   ```
   service bind9 restart
   ```
 ### Loguetown
-- Melakukan testing konfigurasi dengan perintah host -t PTR 192.202.2.2.
+- Melakukan testing konfigurasi dengan perintah `host -t PTR 192.202.2.2`.
   ![image](https://user-images.githubusercontent.com/66562311/139525236-a8035a3b-1aad-48bc-963e-a7fa7af2f6bb.png)
 
 
@@ -189,7 +189,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 ### EniesLobby
 - Edit file 
   ```
-  /etc/bind/named.conf.local
+  vim /etc/bind/named.conf.local
   ```
 - Restart bind9 dengan 
   ```
@@ -207,7 +207,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   ```
 - Edit file 
   ```
-  /etc/bind/named.conf.local 
+  vim /etc/bind/named.conf.local 
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139525534-a3668e1c-2675-43cb-95e7-bbe8a4d073c8.png)
 
@@ -235,18 +235,19 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 ### EniesLobby
 - Edit file 
   ```
-  /etc/bind/kaizoku/franky.E05.com 
+  vim /etc/bind/kaizoku/franky.E05.com 
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139526023-745a779a-816f-4775-a3e5-cc2ee4a000aa.png)
 - Edit file 
   ```
-  /etc/bind/named.conf.options
+  vim /etc/bind/named.conf.options
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139526829-1ec1747e-28a0-49e2-a112-6051ee347a2e.png)
 - Edit file 
   ```
-  /etc/bind/named.conf.local
+  vim /etc/bind/named.conf.local
   ```
+  ![image](https://user-images.githubusercontent.com/66562311/139535245-eedb3a45-cb3c-47c1-a084-3b035ad42cb3.png)
 - Restart bind9 dengan 
   ```
   service bind9 restart
@@ -255,19 +256,19 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 ### Water7
 - Edit file 
   ```
-  /etc/bind/named.conf.options 
+  vim /etc/bind/named.conf.options 
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139526837-c481b324-4274-4912-9462-f4eb2b5c6157.png)
 - Edit file 
   ```
-  /etc/bind/named.conf.local
+  vim /etc/bind/named.conf.local
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139526862-8bed543f-5629-4ff1-831b-b736ce24e5a6.png)
-- Buat folder sunnygo di dalam /etc/bind.
+- Membuat folder sunnygo di dalam /etc/bind.
   ```
   mkdir /etc/bind/sunnygo
   ```
-- Copykan file db.local pada path /etc/bind ke dalam folder sunnygo yang baru saja dibuat dan ubah namanya menjadi mecha.franky.E05.com.
+- Copy file db.local pada path /etc/bind ke dalam folder sunnygo yang baru saja dibuat dan ubah namanya menjadi mecha.franky.E05.com.
   ```
   cp /etc/bind/db.local /etc/bind/sunnygo/mecha.franky.E05.com
   ```
@@ -321,6 +322,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   apt-get install php -y
   apt-get install libapache2-mod-php7.0 -y
   ```
+  ![image](https://user-images.githubusercontent.com/66562311/139535436-6c759eeb-865c-49c8-adda-db55dfff9baa.png)
 - Pindah ke directory 
   ```
   /etc/apache2/sites-available
@@ -343,7 +345,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139527444-58342d67-c941-4ef2-a1db-6fa77f3d4fb1.png)
 - Pindah ke directory `/var/www`.
-- Download file zip menggunakan wget.
+- Download file zip.
   ```
   wget https://github.com/FeinardSlim/Praktikum-Modul-2-Jarkom/raw/main/franky.zip
   ```
@@ -351,7 +353,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   ```
   unzip franky.zip
   ```
-- Rename folder franky menjadi franky.E05.com dan terdapat isi file seperti pada gambar berikut:
+- Rename folder `franky` menjadi `franky.E05.com`
 
 ### Loguetown
 - Install aplikasi lynx.
@@ -380,11 +382,11 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139532234-ca62e369-34e5-4887-a61c-b03768142e67.png)
 
-- Aktifkan konfigurasi.
+- Mengaktifkan konfigurasi.
   ```
   a2ensite super.franky.E05.com
   ```
-- Restart apache.
+- Restart apache dengan
   ```
   service apache2 restart
   ```
@@ -411,7 +413,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   super.franky.E05.com.conf 
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139532421-6c849075-59a3-4897-921d-b3278e8a3d20.png)
-- Restart apache.
+- Restart apache dengan
   ```
   service apache2 restart
   ```
@@ -432,15 +434,16 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   super.franky.E05.com.conf
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139532561-1c1410fa-1ba9-4c89-af38-ee6ea5a604c2.png)
-- Restart apache.
+- Restart apache dengan
   ```
   service apache2 restart
   ```
 
 ### Pada Loguetown
-- Buka `www.super.franky.E05.com/public` menggunakan lynx.
+- Membuka `www.super.franky.E05.com/public` menggunakan lynx.
 ![image](https://user-images.githubusercontent.com/66562311/139532639-f72b853f-8946-434a-b8f8-246e3c939993.png)
-https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%2012%20pt%205.mkv?raw=true
+
+<a href="https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%2012%20pt%205.mkv?raw=true">hasil no. 12</a>
 
 ## No. 13
 ### Luffy juga meminta Nami untuk dibuatkan konfigurasi virtual host. Virtual host ini bertujuan untuk dapat mengakses file asset www.super.franky.yyy.com/public/js menjadi www.super.franky.yyy.com/js. 
@@ -455,13 +458,13 @@ https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%
   ![image](https://user-images.githubusercontent.com/66562311/139532743-b5611c95-2034-4304-b1d1-173730c6f26e.png)
   ![image](https://user-images.githubusercontent.com/66562311/139532755-0a6fb851-523c-4d17-8d5e-66802c326666.png)
 
-- Restart apache.
+- Restart apache dengan
   ```
   service apache2 restart
   ```
 
 ### Pada Loguetown
-- Buka `www.super.franky.E05.com/js` menggunakan lynx.
+- Membuka `www.super.franky.E05.com/js` menggunakan lynx.
 ![image](https://user-images.githubusercontent.com/66562311/139532767-07fd7cf2-3fbd-4182-8cdb-ef5aac16ec08.png)
 
 
@@ -478,17 +481,17 @@ https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139532970-bea7daf6-cd6c-4000-bb04-4e98c62690e2.png)
 
-- Edit file, untuk meaktifkan port 15000 dan port 15500
+- Untuk meaktifkan port 15000 dan port 15500, edit file
   ```
   /etc/apache2/ports.conf
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139532988-91ff58c5-fde4-42dc-8558-b8b4bb9dacfa.png)
 
-- Aktifkan konfigurasi
+- Mengaktifkan konfigurasi
   ```
   a2ensite general.mecha.franky.E05.com
   ```
-- Restart apache.
+- Restart apache dengan
   ```
   service apache2 restart
   ```
@@ -497,20 +500,20 @@ https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%
   ```
   wget https://github.com/FeinardSlim/Praktikum-Modul-2-Jarkom/raw/main/general.mecha.franky.zip
   ```
-- Lakukan unzip.
+- Melakukan unzip.
   ```
   unzip general.mecha.franky.zip
   ```
-- Rename folder g`eneral.mecha.franky` menjadi `general.mecha.franky.E05.com`
+- Rename folder `general.mecha.franky` menjadi `general.mecha.franky.E05.com`
 
 ### Pada Loguetown
-- Buka `www.general.mecha.franky.E05.com` menggunakan `lynx`.
+- Membuka `www.general.mecha.franky.E05.com` menggunakan `lynx`.
   ![image](https://user-images.githubusercontent.com/66562311/139532998-8dfacd8c-be85-4ad7-9608-e19a6ca3394f.png)
 
-- Buka `www.general.mecha.franky.E05.com:15000` menggunakan `lynx`.
+- Membuka `www.general.mecha.franky.E05.com:15000` menggunakan `lynx`.
   ![image](https://user-images.githubusercontent.com/66562311/139533014-03301dd9-d916-4b71-a094-b889759fb86d.png)
 
-- Buka `www.general.mecha.franky.E05.com:15500` menggunakan `lynx`.
+- Membuka `www.general.mecha.franky.E05.com:15500` menggunakan `lynx`.
  ![image](https://user-images.githubusercontent.com/66562311/139533041-76b8d6df-9b8c-47aa-9c29-45197a564be6.png)
 
 
@@ -526,13 +529,13 @@ https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139533308-257a3675-10cc-4969-ab26-f50de8a0b06e.png)
 
-- Jalankan perintah berikut untuk membuat akun autentikasi baru dengan username luffy. Kita akan diminta untuk memasukkan password baru dan confirm password tersebut diisi onepiece.
+- Menjalankan perintah berikut untuk membuat akun autentikasi baru dengan username luffy.
   ```
   htpasswd -c /etc/apache2/.htpasswd luffy
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139533345-daeb46ce-f3d1-4d2b-8975-050f215acbc3.png)
 
-- Restart apache.
+- Restart apache dengan
   ```
   service apache2 restart
   ```
@@ -552,6 +555,9 @@ https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%
   000-default.conf
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139533449-983c9ec8-c6bb-4df5-82a6-28ad9e1af6a9.png)
+  
+- Edit file /etc/apache2/ports.conf untuk mengaktifkan `port 192.202.2.4`.
+  ![image](https://user-images.githubusercontent.com/66562311/139535035-364a1b65-6661-48ca-8093-809167ebb260.png)
 
 - Restart apache.
   ```
@@ -559,19 +565,19 @@ https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%
   ```
 
 ### Pada Loguetown
-- Buka 192.181.2.4 menggunakan lynx.
-https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%2016%20pt%204.mkv?raw=true
+- Membuka 192.181.2.4 menggunakan lynx.
+<a href="https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%2016%20pt%204.mkv?raw=true">hasil no. 16</a>
 
 ## No. 17
 ### Dikarenakan Franky juga ingin mengajak temannya untuk dapat menghubunginya melalui website www.super.franky.yyy.com, dan dikarenakan pengunjung web server pasti akan bingung dengan randomnya images yang ada, maka Franky juga meminta untuk mengganti request gambar yang memiliki substring “franky” akan diarahkan menuju franky.png. Maka bantulah Luffy untuk membuat konfigurasi dns dan web server ini!
 
 ## Jawaban
-### Pada Skypie
+### Skypie
 - Mengaktifkan module rewrite dengan menjalankan perintah 
   ```
   a2enmod rewrite 
   ```
-- Restart apache
+- Restart apache dengan
   ```
   service apache2 restart
   ```
@@ -586,7 +592,7 @@ https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%
   ```
   service apache2 restart
   ```
-### Pada Loguetown
+### Loguetown
 - Buka `www.super.franky.E05.com/public/images/franky.png` menggunakan `lynx`.
 - Buka `www.super.franky.E05.com/public/images/eyeoffranky.jpg` menggunakan `lynx`.
 - Buka `www.super.franky.E05.com/public/images/background-frank.jpg` menggunakan `lynx`.
