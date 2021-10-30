@@ -376,7 +376,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 - Copy file `000-default.conf` menjadi file `super.franky.E07.com.conf`.
 - Edit file 
   ```
-  super.franky.B09.com.conf
+  super.franky.E05.com.conf
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139532234-ca62e369-34e5-4887-a61c-b03768142e67.png)
 
@@ -429,7 +429,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 - Pindah ke directory `/etc/apache2/sites-available`.
 - Edit file 
   ```
-  super.franky.B09.com.conf
+  super.franky.E05.com.conf
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139532561-1c1410fa-1ba9-4c89-af38-ee6ea5a604c2.png)
 - Restart apache.
@@ -474,7 +474,7 @@ https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%
 - Copy file `000-default.conf` menjadi file `general.mecha.franky.E05.com.conf`.
 - Edit file 
   ```
-  general.mecha.franky.B09.com.conf
+  general.mecha.franky.E05.com.conf
   ```
   ![image](https://user-images.githubusercontent.com/66562311/139532970-bea7daf6-cd6c-4000-bb04-4e98c62690e2.png)
 
@@ -486,7 +486,7 @@ https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%
 
 - Aktifkan konfigurasi
   ```
-  a2ensite general.mecha.franky.B09.com
+  a2ensite general.mecha.franky.E05.com
   ```
 - Restart apache.
   ```
@@ -538,7 +538,7 @@ https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%
   ```
   
 ### Pada Loguetown
-- Buka `www.general.mecha.franky.B09.com:15000` menggunakan `lynx`.
+- Buka `www.general.mecha.franky.E05.com:15000` menggunakan `lynx`.
   https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%2015%20pt%203.mkv?raw=true
 
 ## No. 16
