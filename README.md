@@ -594,7 +594,4 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   ```
 ### Loguetown
 - Buka `www.super.franky.E05.com/public/images/franky.png` menggunakan `lynx`.
-- Buka `www.super.franky.E05.com/public/images/eyeoffranky.jpg` menggunakan `lynx`.
-- Buka `www.super.franky.E05.com/public/images/background-frank.jpg` menggunakan `lynx`.
-
-
+  ![image](https://user-images.githubusercontent.com/66562311/139536258-adb66783-92b7-4a5e-9653-77010f94487c.png)
