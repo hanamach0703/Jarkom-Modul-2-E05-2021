@@ -575,7 +575,7 @@ https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%
   ```
   service apache2 restart
   ```
-- Menambahkan file baru `.htaccess` pada folder `/var/www/super.franky.B09.com`
+- Menambahkan file baru `.htaccess` pada folder `/var/www/super.franky.E05.com`
   ![image](https://user-images.githubusercontent.com/66562311/139534595-6f7529fb-e5f1-41b3-a6a8-408bd42ea15c.png)
 
 - Pindah ke directory `/etc/apache2/sites-available`.
