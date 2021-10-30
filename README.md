@@ -167,8 +167,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   ```
   /etc/bind/named.conf.local 
   ```
-  seperti pada gambar berikut:
-  ![image](https://user-images.githubusercontent.com/66562311/139524734-5e443e53-5a16-4574-832d-ab051b6a3c72.png)
+  ![image](https://user-images.githubusercontent.com/66562311/139525287-e6d48aa7-c6d6-477b-bd97-dd2e6e9844c7.png)
   
 - Edit file 
   ```
@@ -179,26 +178,189 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   service bind9 restart
   ```
 ### Pada Loguetown
-  Melakukan testing konfigurasi dengan perintah host -t PTR 192.202.2.2.
+- Melakukan testing konfigurasi dengan perintah host -t PTR 192.202.2.2.
+  ![image](https://user-images.githubusercontent.com/66562311/139525236-a8035a3b-1aad-48bc-963e-a7fa7af2f6bb.png)
+
 
 ## No. 5
 ### Supaya tetap bisa menghubungi Franky jika server EniesLobby rusak, maka buat Water7 sebagai DNS Slave untuk domain utama.
 
 ## Jawaban
+### Pada EniesLobby
+- Edit file 
+  ```
+  /etc/bind/named.conf.local
+  ```
+- Restart bind9 dengan 
+  ```
+  service bind9 restart
+  ```
+  
+### Pada water7 
+- Menulis command untuk update package lists
+  ```
+  apt-get update
+  ```
+- Menulis command untuk install aplikasi bind9 pada EniesLobby
+  ```
+  apt-get install bind9 -y
+  ```
+- Edit file 
+  ```
+  /etc/bind/named.conf.local 
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139525534-a3668e1c-2675-43cb-95e7-bbe8a4d073c8.png)
+
+- Restart bind9 dengan 
+  ```
+  service bind9 restart
+  ```
+  
+### Pada Loguetown
+- Edit file 
+  ```
+  vim /etc/resolv.conf
+  ``` 
+  ![image](https://user-images.githubusercontent.com/66562311/139525566-c2d46a11-c594-4b9c-991c-80c222b83f6f.png)
+  
+- Melakukan testing `ping -c 4 franky.E05.com`
+  ![image](https://user-images.githubusercontent.com/66562311/139525695-5a274437-a5fe-44d1-a3bd-171d9f7e3b07.png)
+  ![image](https://user-images.githubusercontent.com/66562311/139525727-67d85604-e96f-4ced-a574-50d7623ffd98.png)  
+
 
 ## No. 6
 ### Setelah itu terdapat subdomain mecha.franky.yyy.com dengan alias www.mecha.franky.yyy.com yang didelegasikan dari EniesLobby ke Water7 dengan IP menuju ke Skypie dalam folder sunnygo.
 
 ## Jawaban
+### Pada EniesLobby
+- Edit file 
+  ```
+  /etc/bind/kaizoku/franky.E05.com 
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139526023-745a779a-816f-4775-a3e5-cc2ee4a000aa.png)
+- Edit file 
+  ```
+  /etc/bind/named.conf.options
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139526829-1ec1747e-28a0-49e2-a112-6051ee347a2e.png)
+- Edit file 
+  ```
+  /etc/bind/named.conf.local
+  ```
+- Restart bind9 dengan 
+  ```
+  service bind9 restart
+  ```
+
+### Pada Water7
+- Edit file 
+  ```
+  /etc/bind/named.conf.options 
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139526837-c481b324-4274-4912-9462-f4eb2b5c6157.png)
+- Edit file 
+  ```
+  /etc/bind/named.conf.local
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139526862-8bed543f-5629-4ff1-831b-b736ce24e5a6.png)
+- Buat folder sunnygo di dalam /etc/bind.
+  ```
+  mkdir /etc/bind/sunnygo
+  ```
+- Copykan file db.local pada path /etc/bind ke dalam folder sunnygo yang baru saja dibuat dan ubah namanya menjadi mecha.franky.E05.com.
+  ```
+  cp /etc/bind/db.local /etc/bind/sunnygo/mecha.franky.E05.com
+  ```
+- Edit file 
+  ```
+  /etc/bind/sunnygo/mecha.franky.E05.com
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139526877-2f9d0f85-8efa-4c65-82a9-ad46b8a4d500.png)
+- Restart bind9 dengan 
+  ```
+  service bind9 restart
+  ```
+  
+### Pada Loguetown
+- Melakukan testing `ping -c 4 mecha.franky.E05.com` dan `ping -c 4 www.mecha.franky.E05.com`
+  ![image](https://user-images.githubusercontent.com/66562311/139526901-3f72eaa5-29a9-4fe2-a861-833bcff70bea.png)
+
 
 ## No. 7
 ### Untuk memperlancar komunikasi Luffy dan rekannya, dibuatkan subdomain melalui Water7 dengan nama general.mecha.franky.yyy.com dengan alias www.general.mecha.franky.yyy.com yang mengarah ke Skypie.
+
+## Jawaban
+### Pada Water7
+- Edit file 
+  ```
+  /etc/bind/sunnygo/mecha.franky.E05.com
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139527062-f5c64b21-5a03-4bda-bc93-6e0cb564e66b.png)
+- Restart bind9 dengan 
+  ```
+  service bind9 restart
+  ```
+  
+### Pada Loguetown
+- Melakukan testing `ping -c 4 general.mecha.franky.E05.com` dan `ping -c 4 www.general.mecha.franky.E05.com`
+  ![image](https://user-images.githubusercontent.com/66562311/139527100-2f8e5617-cc66-498a-a4a5-cf0033399043.png)
 
 
 ## No. 8
 ### Setelah melakukan konfigurasi server, maka dilakukan konfigurasi Webserver. Pertama dengan webserver www.franky.yyy.com. Pertama, luffy membutuhkan webserver dengan DocumentRoot pada /var/www/franky.yyy.com.
 
 ## Jawaban
+### EniesLobby
+- Edit File
+  ![image](https://user-images.githubusercontent.com/66562311/139527503-bbddfde5-6586-40b0-87f2-9c62a9d22acf.png)	
+
+### Pada Skypie
+- Install aplikasi apache, PHP, dan libapache2-mod-php7.0.
+  ```
+  apt-get install apache2 -y
+  apt-get install php -y
+  apt-get install libapache2-mod-php7.0 -y
+  ```
+- Pindah ke directory 
+  ```
+  /etc/apache2/sites-available
+  ```
+- Copy file `000-default.conf` menjadi file `franky.E05.com.conf`
+- Edit file 
+  ```
+  franky.E05.com.conf
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139527608-756d777c-0b90-4517-b9e0-6652498219fe.png)
+  ![image](https://user-images.githubusercontent.com/66562311/139527642-7f036a30-57b9-4d40-8fdd-df38f04df4ef.png)
+
+- Aktifkan konfigurasi franky.E05.com.
+  ```
+  a2ensite franky.E05.com
+  ```
+- Restart apache.
+  ```
+  service apache2 restart
+  ```
+  ![image](https://user-images.githubusercontent.com/66562311/139527444-58342d67-c941-4ef2-a1db-6fa77f3d4fb1.png)
+- Pindah ke directory `/var/www`.
+- Download file zip menggunakan wget.
+  ```
+  wget https://github.com/FeinardSlim/Praktikum-Modul-2-Jarkom/raw/main/franky.zip
+  ```
+- Melakukan unzip.
+  ```
+  unzip franky.zip
+  ```
+- Rename folder franky menjadi franky.E05.com dan terdapat isi file seperti pada gambar berikut:
+
+### Pada Loguetown
+- Install aplikasi lynx.
+  ```
+  apt-get install lynx -y
+  ```
+- Buka `www.franky.E05.com` menggunakan `lynx`.
+  ![image](https://user-images.githubusercontent.com/66562311/139527668-de61b7bf-8e9d-447c-a905-10c702696fe1.png)
+
 
 ## No. 9
 ### Setelah itu, Luffy juga membutuhkan agar url www.franky.yyy.com/index.php/home dapat menjadi menjadi www.franky.yyy.com/home.
