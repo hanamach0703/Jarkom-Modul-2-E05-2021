@@ -617,3 +617,8 @@ Pada Loguetown
 ### Loguetown
 - Buka `www.super.franky.E05.com/public/images/franky.png` menggunakan `lynx`.
   ![image](https://user-images.githubusercontent.com/66562311/139536258-adb66783-92b7-4a5e-9653-77010f94487c.png)
+
+### Pembagian Tugas:
+1. Muhammad Rafki Mardi (No. 5-8 & No. 10-16)
+2. Hana Machmudah (No. 1-4 & No.17)
+3. Achmad Fadillah  (No. 9)
