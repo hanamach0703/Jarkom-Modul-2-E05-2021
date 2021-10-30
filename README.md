@@ -566,3 +566,29 @@ https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%
 ### Dikarenakan Franky juga ingin mengajak temannya untuk dapat menghubunginya melalui website www.super.franky.yyy.com, dan dikarenakan pengunjung web server pasti akan bingung dengan randomnya images yang ada, maka Franky juga meminta untuk mengganti request gambar yang memiliki substring “franky” akan diarahkan menuju franky.png. Maka bantulah Luffy untuk membuat konfigurasi dns dan web server ini!
 
 ## Jawaban
+### Pada Skypie
+- Mengaktifkan module rewrite dengan menjalankan perintah 
+  ```
+  a2enmod rewrite 
+  ```
+- Restart apache
+  ```
+  service apache2 restart
+  ```
+- Menambahkan file baru `.htaccess` pada folder `/var/www/super.franky.B09.com`
+  ![image](https://user-images.githubusercontent.com/66562311/139534595-6f7529fb-e5f1-41b3-a6a8-408bd42ea15c.png)
+
+- Pindah ke directory `/etc/apache2/sites-available`.
+- Edit file `super.franky.E05.com.conf`.
+  ![image](https://user-images.githubusercontent.com/66562311/139534583-306a5e3a-634d-4bb3-9a1c-8abf9008b220.png)
+
+- Restart apache.
+  ```
+  service apache2 restart
+  ```
+### Pada Loguetown
+- Buka `www.super.franky.E05.com/public/images/franky.png` menggunakan `lynx`.
+- Buka `www.super.franky.E05.com/public/images/eyeoffranky.jpg` menggunakan `lynx`.
+- Buka `www.super.franky.E05.com/public/images/background-frank.jpg` menggunakan `lynx`.
+
+
