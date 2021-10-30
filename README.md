@@ -380,7 +380,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
 - Pindah ke directory /etc/apache2/sites-available.
 - Edit file 
   ```
-  franky.B09.com.conf 
+  franky.E05.com.conf 
   ``` 
   ![image](https://user-images.githubusercontent.com/66562311/139536500-e08596a8-f4a0-430c-bdea-e89972fa3f2b.png)
 - Restart apache dengan
@@ -388,7 +388,7 @@ Coba dengan melakukan `ping -c 4 google.com` pada setiap node.
   service apache2 restart
   ```
 Pada Loguetown
-- Membuka `www.franky.B09.com/home` menggunakan lynx.
+- Membuka `www.franky.E05.com/home` menggunakan lynx.
 <a href="https://github.com/hanamach0703/Jarkom-Modul-2-E05-2021/blob/main/picture/nomer%209%20pt%202.mkv?raw=true">hasil No. 9</a>
 
 ## No. 10
